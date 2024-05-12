@@ -52,18 +52,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Priority"/>
 
-        <EditText
-            android:id="@+id/edtPriority"
+        <Spinner
+            android:id="@+id/spnPriority"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:hint="Enter Priority Here"
+            android:entries="@array/priority_levels"
             />
     </LinearLayout>
 
@@ -83,6 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:hint="Enter Deadline Here"
+            android:inputType="date"
             />
     </LinearLayout>
 

@@ -38,7 +38,7 @@ class ManageNote : BottomSheetDialogFragment() {
         binding.btnSubmit.setOnClickListener{
             val title = binding.edtTitle.text.toString()
             val description = binding.edtDescription.text.toString()
-            val priority = binding.edtPriority.text.toString()
+            val priority = binding.spnPriority.selectedItem.toString()
             val deadline = binding.edtDeadline.text.toString()
             val currentTime = Date()
             var note = Note(0,title,description,priority,deadline,currentTime.toString())
@@ -58,12 +58,16 @@ class ManageNote : BottomSheetDialogFragment() {
         if (noteData != null){
             binding.edtTitle.setText(noteData?.title.toString())
             binding.edtDescription.setText(noteData?.description.toString())
-            binding.edtPriority.setText(noteData?.priority.toString())
+            val priorityArray = resources.getStringArray(R.array.priority_levels)
+            val priorityIndex = priorityArray.indexOf(noteData?.priority.toString())
+            if (priorityIndex != -1) {
+                binding.spnPriority.setSelection(priorityIndex)
+            }
             binding.edtDeadline.setText(noteData?.deadline.toString())
         } else {
             binding.edtTitle.setText("")
             binding.edtDescription.setText("")
-            binding.edtPriority.setText("")
+            binding.spnPriority.setSelection(0)
             binding.edtDeadline.setText("")
         }
     }
