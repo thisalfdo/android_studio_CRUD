@@ -9,4 +9,9 @@
     <color name="Alice_Blue">#F7F9FB</color>
     <color name="gray">#526D82</color>
 
+    <color name="high_priority_color">#F3AAAA</color>
+    <color name="medium_priority_color">#F3F6C0</color>
+    <color name="low_priority_color">#BCF6C0</color>
+    <color name="default_color">#E7ECEF</color>
+
 </resources>
